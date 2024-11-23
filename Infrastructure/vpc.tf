@@ -9,7 +9,7 @@ resource "aws_vpc" "vpc_01" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "sl11me-vpc"
+    Name = "Sl11me-vpc"
   }
 }
 

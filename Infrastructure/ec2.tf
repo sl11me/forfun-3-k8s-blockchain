@@ -28,6 +28,7 @@ resource "aws_instance" "PublicWebTemplate" {
   vpc_security_group_ids = [aws_security_group.webserver-security-group.id]
   key_name               = file("3tier.pem")
   user_data              = file("install-apache.sh")
+  associate_public_ip_address = true
 
   tags = {
     Name = "web autoscaled instance"
