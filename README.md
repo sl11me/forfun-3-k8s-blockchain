@@ -88,21 +88,6 @@ kubectl port-forward svc/monitoring-grafana 3000:80 -n monitoring
 
 Ces fichiers sont automatiquement exclus par `.gitignore`.
 
-## 🛠️ Développement
-
-### Structure du projet
-
-```
-forfun-3-k8s-blockchain/
-├── k8s/                    # Manifests générés
-├── k8s-templates/          # Templates (optionnel)
-├── monitoring/             # Configuration monitoring
-├── scripts/                # Scripts utilitaires
-├── values.yaml             # Configuration par défaut
-├── values-local.yaml       # Configuration locale (ignoré par git)
-└── README.md              # Ce fichier
-```
-
 ### Ajouter de nouveaux services
 
 1. Créer un template dans `k8s-templates/`
