@@ -1,6 +1,6 @@
 # 🚀 Blockchain Lab - Kubernetes Deployment
 
-Exercice de deploiement sur cluster k3d avec Helm de nœud blockchain Polkadot avec Prometheus et Grafana pour monitoring.
+1er exercice de deploiement sur cluster k3d avec Helm de nœud blockchain Polkadot avec Prometheus et Grafana pour monitoring.
 (deployment, services, statefulset, servicemonitor et networkpolicies)e
 
 ## 🔧 Configuration
