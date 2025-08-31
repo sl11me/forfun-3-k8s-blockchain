@@ -2,12 +2,6 @@
 
 Un laboratoire Kubernetes pour déployer et monitorer un nœud blockchain Polkadot avec Prometheus et Grafana.
 
-## 📋 Prérequis
-
-- Kubernetes cluster (k3d, minikube, ou cloud)
-- kubectl configuré
-- Helm (pour le monitoring)
-
 ## 🔧 Configuration
 
 ### 1. Copier et personnaliser les variables
@@ -94,13 +88,6 @@ kubectl port-forward svc/monitoring-grafana 3000:80 -n monitoring
 
 Ces fichiers sont automatiquement exclus par `.gitignore`.
 
-### Bonnes pratiques
-
-1. **Ne jamais commiter** `values-local.yaml` ou fichiers contenant des secrets
-2. **Utiliser des mots de passe forts** pour Grafana
-3. **Limiter l'accès réseau** avec les NetworkPolicies
-4. **Surveiller les logs** régulièrement
-
 ## 🛠️ Développement
 
 ### Structure du projet
@@ -122,38 +109,3 @@ forfun-3-k8s-blockchain/
 2. Ajouter les variables dans `values.yaml`
 3. Générer avec `./scripts/generate-manifests.sh`
 
-## 🐛 Dépannage
-
-### Problèmes courants
-
-**Pod en ImagePullBackOff :**
-```bash
-# Vérifier la connectivité réseau
-kubectl describe pod <pod-name>
-```
-
-**Problèmes de stockage :**
-```bash
-# Vérifier les PVC
-kubectl get pvc
-kubectl describe pvc <pvc-name>
-```
-
-**Problèmes de monitoring :**
-```bash
-# Vérifier les ServiceMonitors
-kubectl get servicemonitors
-kubectl describe servicemonitor <name>
-```
-
-## 📝 Licence
-
-Ce projet est fourni à des fins éducatives. Utilisez à vos propres risques en production.
-
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! Assurez-vous de :
-
-1. Ne pas inclure d'informations sensibles
-2. Tester vos modifications
-3. Documenter les changements
