@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: polkadot-sm
+  namespace: sl11me-lab
+  labels:
+    release: monitoring       # correspond au nom HelmRelease Prometheus (kube-prom-stack)
+spec:
+  selector:
+    matchLabels:
+      app: polkadot-node
+  namespaceSelector:
+    matchNames: ["sl11me-lab"]
+  endpoints:
+    - port: metrics
+      interval: 15s
+      scheme: http
