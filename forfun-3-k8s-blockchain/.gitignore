@@ -1,0 +1,41 @@
+# Local configuration files with sensitive data
+values-local.yaml
+values-prod.yaml
+secrets.yaml
+*.key
+*.pem
+*.crt
+
+# Kubernetes secrets and configs
+kubeconfig
+.kube/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Scripts
+scripts/git 

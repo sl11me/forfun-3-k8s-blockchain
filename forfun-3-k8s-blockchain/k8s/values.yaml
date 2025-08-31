@@ -1,0 +1,68 @@
+# Configuration variables for the blockchain lab
+# Copy this file to values-local.yaml and modify as needed
+
+# Namespace configuration
+namespace:
+  name: "blockchain-lab"
+
+# Polkadot node configuration
+polkadot:
+  nodeName: "my-blockchain-node"
+  chain: "westend"  # westend for testnet, polkadot for mainnet
+  image:
+    repository: "parity/polkadot"
+    tag: "latest"
+    pullPolicy: "IfNotPresent"
+  
+  # Resource limits
+  resources:
+    requests:
+      cpu: "250m"
+      memory: "512Mi"
+    limits:
+      cpu: "1"
+      memory: "2Gi"
+  
+  # Storage configuration
+  storage:
+    size: "10Gi"
+    accessMode: "ReadWriteOnce"
+  
+  # Health check configuration
+  healthCheck:
+    readiness:
+      initialDelaySeconds: 30
+      periodSeconds: 10
+    liveness:
+      initialDelaySeconds: 60
+      periodSeconds: 20
+
+# Monitoring configuration
+monitoring:
+  grafana:
+    adminUser: "admin"
+    adminPassword: "CHANGE_ME_IN_PRODUCTION"  # Change this in production!
+  
+  prometheus:
+    retention: "24h"
+    resources:
+      requests:
+        cpu: "200m"
+        memory: "512Mi"
+      limits:
+        cpu: "1"
+        memory: "2Gi"
+  
+  alertmanager:
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "128Mi"
+      limits:
+        cpu: "500m"
+        memory: "512Mi"
+
+# Network configuration
+network:
+  serviceType: "ClusterIP"
+  monitoringNamespace: "monitoring"

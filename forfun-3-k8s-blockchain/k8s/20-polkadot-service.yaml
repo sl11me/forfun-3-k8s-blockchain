@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: polkadot-svc
+  namespace: sl11me-lab
+  labels: { app: polkadot-node }
+spec:
+  type: ClusterIP
+  selector: { app: polkadot-node }
+  ports:
+    - { name: p2p,     port: 30333, targetPort: p2p     }
+    - { name: rpc,     port: 9933,  targetPort: rpc     }
+    - { name: ws,      port: 9944,  targetPort: ws      }
+    - { name: metrics, port: 9615,  targetPort: metrics }
